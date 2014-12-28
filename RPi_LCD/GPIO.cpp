@@ -64,3 +64,16 @@ int GPIO::read(void) {
 void GPIO::set(int newState) {
   digitalWrite(pinNumber, newState);
 }
+/**
+ * @brief Changes the direction of a pin.
+ * @param newDir New direction (DIR_INPUT or DIR_OUTPUT)
+ */
+void GPIO::changeDirection(int newDir) {
+  if (direction == DIR_INPUT) {
+    pinMode(pinNumber, DIR_OUTPUT);
+    direction = DIR_OUTPUT;
+  } else {
+    pinMode(pinNumber, DIR_INPUT);
+    direction = DIR_INPUT;
+  }
+}

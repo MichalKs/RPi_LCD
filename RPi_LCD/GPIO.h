@@ -38,6 +38,7 @@ public:
   void toggle(void);
   int read(void);
   void set(int newState);
+  void changeDirection(int newDir);
 
 private:
   static int initialized;
